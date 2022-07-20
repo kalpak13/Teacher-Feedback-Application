@@ -1,0 +1,72 @@
+{% extends 'project/base.html' %}
+
+{% block Title %}Form{% endblock Title %}
+
+
+
+{% block Content %}
+<form method='POST'>
+
+{% csrf_token %}
+{% comment %} {{form.as_p}} {% endcomment %}
+<table class="table">
+{% for field in form %}
+
+{% if field.label == "Teacher" %}
+
+{{field.label}}
+
+{{field}}
+<br>
+<br>
+
+{% else %}
+
+<tr scope="row">
+<td>{{field.label}}</td>
+<td></td>
+<td>{{field.0}}</td>
+<td></td>
+<td></td>
+<td>{{field.1}}</td>
+<td></td>
+<td></td>
+<td>{{field.2}}</td>
+<td></td>
+<td></td>
+<td>{{field.3}}</td>
+<td></td>
+<td></td>
+<td>{{field.4}}</td>
+<td></td>
+<td></td>
+<td>{{field.5}}</td>
+<td></td>
+<td></td>
+<td>{{field.6}}</td>
+<td></td>
+<td></td>
+<td>{{field.7}}</td>
+<td></td>
+<td></td>
+<td>{{field.8}}</td>
+<td></td>
+<td></td>
+<td>{{field.9}}</td>
+<td></td>
+<td></td>
+</tr>
+
+
+
+{% endif %}
+
+
+{% endfor %}
+</table>
+
+<input type="submit" value="Submit">
+
+</form>
+
+{% endblock Content %}

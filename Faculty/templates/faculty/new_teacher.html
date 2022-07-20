@@ -1,0 +1,17 @@
+{% extends 'Faculty/base_faculty.html' %}
+
+{% load crispy_forms_tags %}
+{% block Title %}New Teacher{% endblock Title %}
+
+{% block Content %}
+
+<form method='POST' enctype="multipart/form-data">
+{% csrf_token %}
+
+{{form.as_p}}
+
+<input type="submit" value="Add">
+
+</form>
+
+{% endblock Content %}

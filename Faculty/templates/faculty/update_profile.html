@@ -1,0 +1,16 @@
+{% extends 'faculty/base_faculty.html' %}
+
+{% block Title %}IUdpate{% endblock Title %}
+
+{% block Content %}
+
+<form method='POST' enctype='multipart/form-data'>
+
+{% csrf_token %}
+{{form.as_p}}
+<input type="submit" value="Update">
+
+</form>
+
+
+{% endblock Content %}

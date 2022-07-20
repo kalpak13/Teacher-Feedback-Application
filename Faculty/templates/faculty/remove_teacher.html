@@ -1,0 +1,15 @@
+{% extends 'Faculty/base_faculty.html' %}
+
+
+{% block Title %}Remove{% endblock Title %}
+
+{% block Content %}
+
+<h1>confirm delete {{teacher.name}}</h1>
+<form method='POST'>
+{% csrf_token %}
+<input type="submit" value="Remove">
+
+</form>
+
+{% endblock Content %}

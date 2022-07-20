@@ -1,0 +1,28 @@
+{% extends 'Faculty/base_faculty.html' %}
+
+{% block Title %}List{% endblock Title %}
+
+{% block Content %}
+
+<table class="table">
+{% for teacher in teachers %}
+
+<tr scope="row">
+<td>
+<a href="{% url 'faculty:profile' pk=teacher.pk%}">{{teacher.name}}</a>
+</td>
+<td>
+<button class='my'><a href="{% url 'faculty:remove' pk=teacher.pk %}">Remove</a></button>
+</td>
+</tr>
+
+
+{% endfor %}
+</table>
+
+
+
+
+{% endblock Content %}
+
+

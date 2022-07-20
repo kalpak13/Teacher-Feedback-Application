@@ -1,0 +1,31 @@
+{% extends 'Faculty/base_faculty.html' %}
+
+{% block Title %}Profile{% endblock Title %}
+
+{% block Content %}
+{% if  profile.profilePicture.url != null%}
+<img src="{{ profile.profilePicture.url }}" alt="Profile Pic" width="150" height="200">
+{% else %}
+<div id="new2"><button  ><a href="{% url 'faculty:update' pk=profile.pk%}"  >update profile</a></button></div>
+{% endif %}
+
+
+
+
+
+<div id="new">
+<table>
+<tr>
+<td>Name:- </td>
+<td>{{profile.name}}</td>
+</tr>
+<br>
+<td>Department:-</td>
+<td>{{profile.department}}</td>
+</tr>
+</table>
+</div>
+
+
+
+{% endblock Content %}
